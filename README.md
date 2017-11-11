@@ -1,6 +1,6 @@
 # HackPrinceton2017
 
-#Medical Examination Recorder
+# Medical Examination Recorder
 
 ## App that allows hands-free patient examination for doctors
 
