@@ -8,11 +8,16 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class TextActivity extends Activity {
 
-    Button backBtn;
-    Button subBtn;
-    EditText reportTxt;
+    private Button backBtn;
+    private Button subBtn;
+    private EditText reportTxt;
+    private String[] list;
+    private String finalString = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +28,19 @@ public class TextActivity extends Activity {
         subBtn = (Button) findViewById(R.id.submit);
         reportTxt = (EditText) findViewById(R.id.report);
         reportTxt.setVerticalScrollBarEnabled(true);
-        reportTxt.setText(MainActivity.getPatientName() + "\n" + MainActivity.getResult());
+
+        String test = "age 65 height 70 weight 120 temperature 98.2 heart rate 73 blood pressure 62 / 56";
+        list = test.split(" ");
+        //list = MainActivity.getResult().split(" ");
+        finalString += MainActivity.getPatientName() + "\n";
+        finalString += "Age: " + list[1] + "\n";
+        finalString += "Height: " + list[3] + " inches\n";
+        finalString += "Weight: " + list[5] + " lbs\n";
+        finalString += "Temperature: " + list[7] + " degrees F\n";
+        finalString += "Heart Rate: " + list[10] + "bpm\n";
+        finalString += "Blood Pressure: " + list[13] + "/" + list[15] + " mmHg\n";
+
+        reportTxt.setText(finalString);
 
         /* initialize buttons */
         backBtn.setOnClickListener(new View.OnClickListener () {
