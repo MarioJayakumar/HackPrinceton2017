@@ -37,13 +37,23 @@
 
     <EditText
         android:id="@+id/report"
+        android:layout_width ="wrap_content"
+        android:layout_height ="wrap_content"
+        android:layout_weight ="1"
+        android:textSize="24sp"
+        android:textColor="@color/white"
+        android:inputType="textCapSentences|textMultiLine"
+        android:maxLines ="10"
+        android:maxLength ="2000"
+        android:scrollHorizontally="false" />
+        <!--
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/submit"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="22dp"
+        android:layout_marginTop="31dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Report" />
-
+        android:text="Report"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+        -->
 </RelativeLayout>

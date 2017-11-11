@@ -22,6 +22,8 @@ public class TextActivity extends Activity {
         backBtn = (Button) findViewById(R.id.back);
         subBtn = (Button) findViewById(R.id.submit);
         reportTxt = (EditText) findViewById(R.id.report);
+        reportTxt.setVerticalScrollBarEnabled(true);
+        reportTxt.setText(MainActivity.getResult());
 
         /* initialize buttons */
         backBtn.setOnClickListener(new View.OnClickListener () {

@@ -21,6 +21,8 @@ public class MainActivity extends Activity {
     private ImageButton btnSpeak;
     private Button nextBtn;
     private final int REQ_CODE_SPEECH_INPUT = 100;
+    static protected ArrayList<String> result;
+    static protected String ret;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +32,6 @@ public class MainActivity extends Activity {
         nextBtn = (Button) findViewById(R.id.Next);
         txtSpeechInput = (TextView) findViewById(R.id.txtSpeechInput);
         btnSpeak = (ImageButton) findViewById(R.id.btnSpeak);
-
 
         // hide the action bar
         getActionBar().hide();
@@ -84,7 +85,7 @@ public class MainActivity extends Activity {
             case REQ_CODE_SPEECH_INPUT: {
                 if (resultCode == RESULT_OK && null != data) {
 
-                    ArrayList<String> result = data
+                    result = data
                             .getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
                     txtSpeechInput.setText(result.get(0));
                 }
@@ -92,6 +93,13 @@ public class MainActivity extends Activity {
             }
 
         }
+    }
+
+    static protected String getResult() {
+        /* DOESNT CHECK FOR CASE WHERE NOTHING IS ADDED */
+        if (result.get(0).compareTo(" ") != 0)
+            return result.get(0);
+        return ("Please go back and add text");
     }
 
     @Override
