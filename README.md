@@ -1,6 +1,6 @@
 # HackPrinceton2017
 
-# SIRONA
+# Sirona
 
 ## App that allows hands-free patient examination for doctors
 
