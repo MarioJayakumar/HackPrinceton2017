@@ -8,8 +8,15 @@
 App Will Store Information:
 
 Patient Name
+
 Patient Age
+
 Height
+
 Weight
 
-Vitals
+Temperature
+
+Heart Rate
+
+Blood Pressure
