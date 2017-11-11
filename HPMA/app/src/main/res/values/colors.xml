@@ -4,6 +4,11 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="white">#ffffff</color>
+
     <color name="bg_gradient_start">#31244e</color>
     <color name="bg_gradient_end">#6b394c</color>
+    <!--
+    <color name="bg_gradient_start">#a635f2</color>
+    <color name="bg_gradient_end">#3551f2</color>
+    -->
 </resources>

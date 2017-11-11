@@ -98,9 +98,7 @@ public class MainActivity extends Activity {
 
     static protected String getResult() {
         /* DOESNT CHECK FOR CASE WHERE NOTHING IS ADDED */
-        if (result.get(0).compareTo(" ") != 0)
-            return result.get(0);
-        return ("Please go back and add text");
+        return result.get(0);
     }
 
     static protected String getPatientName() {
