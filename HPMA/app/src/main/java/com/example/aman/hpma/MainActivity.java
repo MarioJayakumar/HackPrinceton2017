@@ -11,6 +11,7 @@ import android.speech.RecognizerIntent;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,10 +20,10 @@ public class MainActivity extends Activity {
 
     private TextView txtSpeechInput;
     private ImageButton btnSpeak;
+    static private EditText patName;
     private Button nextBtn;
     private final int REQ_CODE_SPEECH_INPUT = 100;
     static protected ArrayList<String> result;
-    static protected String ret;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +33,7 @@ public class MainActivity extends Activity {
         nextBtn = (Button) findViewById(R.id.Next);
         txtSpeechInput = (TextView) findViewById(R.id.txtSpeechInput);
         btnSpeak = (ImageButton) findViewById(R.id.btnSpeak);
+        patName = (EditText) findViewById(R.id.name);
 
         // hide the action bar
         getActionBar().hide();
@@ -43,7 +45,6 @@ public class MainActivity extends Activity {
                 promptSpeechInput();
             }
         });
-
 
         /* initialize next button */
         nextBtn.setOnClickListener(new View.OnClickListener () {
@@ -100,6 +101,10 @@ public class MainActivity extends Activity {
         if (result.get(0).compareTo(" ") != 0)
             return result.get(0);
         return ("Please go back and add text");
+    }
+
+    static protected String getPatientName() {
+        return patName.getText().toString();
     }
 
     @Override

@@ -23,7 +23,7 @@ public class TextActivity extends Activity {
         subBtn = (Button) findViewById(R.id.submit);
         reportTxt = (EditText) findViewById(R.id.report);
         reportTxt.setVerticalScrollBarEnabled(true);
-        reportTxt.setText(MainActivity.getResult());
+        reportTxt.setText(MainActivity.getPatientName() + "\n" + MainActivity.getResult());
 
         /* initialize buttons */
         backBtn.setOnClickListener(new View.OnClickListener () {
